@@ -1,19 +1,40 @@
 {
   "$schema": "https://playground.wordpress.net/blueprint-schema.json",
   "landingPage": "/",
-  "preferredVersions": { "php": "8.3", "wp": "latest" },
-  "features": { "networking": true },
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "features": {
+    "networking": true
+  },
   "login": true,
   "steps": [
     {
       "step": "installTheme",
-      "themeData": { "resource": "git:directory", "url": "https://github.com/Alexandercolombo/quillmoor-wordpress", "ref": "main", "path": "wp-content/themes/quillmoor" },
-      "options": { "activate": true }
+      "themeData": {
+        "resource": "git:directory",
+        "url": "https://github.com/Alexandercolombo/quillmoor-wordpress",
+        "ref": "main",
+        "path": "wp-content/themes/quillmoor"
+      },
+      "options": {
+        "activate": true,
+        "targetFolderName": "quillmoor"
+      }
     },
     {
       "step": "installPlugin",
-      "pluginData": { "resource": "git:directory", "url": "https://github.com/Alexandercolombo/quillmoor-wordpress", "ref": "main", "path": "wp-content/plugins/quillmoor-core" },
-      "options": { "activate": true }
+      "pluginData": {
+        "resource": "git:directory",
+        "url": "https://github.com/Alexandercolombo/quillmoor-wordpress",
+        "ref": "main",
+        "path": "wp-content/plugins/quillmoor-core"
+      },
+      "options": {
+        "activate": true,
+        "targetFolderName": "quillmoor-core"
+      }
     },
     {
       "step": "runPHP",
