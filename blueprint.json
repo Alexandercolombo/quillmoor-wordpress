@@ -38,7 +38,7 @@
     },
     {
       "step": "runPHP",
-      "code": "<?php define( 'QUILLMOOR_FAST_SEED', true ); require '/wordpress/wp-load.php'; require WP_PLUGIN_DIR . '/quillmoor-core/demo/seed.php';"
+      "code": "<?php define( 'QUILLMOOR_FAST_SEED', true ); require '/wordpress/wp-load.php'; add_filter( 'wp_should_handle_php_error', '__return_false' ); try { require WP_PLUGIN_DIR . '/quillmoor-core/demo/seed.php'; } catch ( Throwable $e ) { echo 'Seed failed: ' . $e->getMessage() . ' at ' . $e->getFile() . ':' . $e->getLine(); throw $e; }"
     }
   ]
 }
