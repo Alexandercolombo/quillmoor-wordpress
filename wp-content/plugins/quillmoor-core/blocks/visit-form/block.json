@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "quillmoor/visit-form",
+  "title": "Site visit: request form",
+  "category": "quillmoor",
+  "icon": "email-alt",
+  "description": "The full site-visit request form. Requests appear in the dashboard and go to the site's admin email.",
+  "supports": { "html": false },
+  "editorScript": "file:./editor.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

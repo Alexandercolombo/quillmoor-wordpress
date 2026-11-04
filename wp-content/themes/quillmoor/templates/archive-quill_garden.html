@@ -1,0 +1,29 @@
+<!-- wp:template-part {"slug":"header","area":"header"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
+<main class="wp-block-group"><!-- wp:group {"className":"page-head","layout":{"type":"default"}} -->
+<div class="wp-block-group page-head"><!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">Four gardens, each at its best.</h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"className":"lede"} -->
+<p class="lede">Every garden has a month it was built around, and it still has to look right in the other eleven.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"prose-wide","layout":{"type":"default"}} -->
+<div class="wp-block-group prose-wide"><!-- wp:query {"query":{"perPage":4,"postType":"quill_garden","order":"desc","orderBy":"date","inherit":false}} -->
+<div class="wp-block-query"><!-- wp:post-template {"className":"gardens"} -->
+<!-- wp:post-featured-image /-->
+<!-- wp:post-title {"level":3,"isLink":true} /-->
+<!-- wp:group {"className":"packet-meta","layout":{"type":"default"}} -->
+<div class="wp-block-group packet-meta"><!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"garden_plant"}}}},"className":"garden-plant"} -->
+<p class="garden-plant"></p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"garden_best"}}}}} -->
+<p></p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- /wp:post-template --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+<!-- wp:pattern {"slug":"quillmoor/close"} /-->
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->

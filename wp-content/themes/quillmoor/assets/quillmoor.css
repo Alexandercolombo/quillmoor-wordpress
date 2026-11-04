@@ -1,0 +1,298 @@
+:root{
+  --stone:var(--wp--preset--color--stone); --ink:var(--wp--preset--color--ink); --ink-2:#3C4239;
+  --april:var(--wp--preset--color--april); --july:var(--wp--preset--color--july); --october:var(--wp--preset--color--october); --january:var(--wp--preset--color--january);
+  --on-april:#191D18; --on-july:#EEF0E8; --on-october:#191D18; --on-january:#F0EBEE;
+  --display:var(--wp--preset--font-family--bricolage); --latin:var(--wp--preset--font-family--gelasio); --body:var(--wp--preset--font-family--bricolage);
+  --gutter:clamp(16px,3vw,44px);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--body);font-size:clamp(1.0625rem,.98rem + .3vw,1.1875rem);line-height:1.5;font-variation-settings:"wdth" 100}
+::selection{background:var(--october);color:var(--ink)}
+img{display:block;max-width:100%;height:auto}
+.window img,.ph img,.step .wp-block-image img{width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1.5px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 86,"opsz" 60;letter-spacing:-.012em;line-height:1;margin:0;text-wrap:balance}
+p{margin:0}
+.latin{font-family:var(--latin);font-style:italic;font-weight:400;letter-spacing:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border:0;background:var(--ink);color:var(--stone);font:inherit;font-weight:650;font-variation-settings:"wdth" 88;cursor:pointer;text-decoration:none;transition:background .25s var(--ease),color .25s var(--ease)}
+.btn:hover{background:var(--season,var(--july));color:var(--season-on,var(--on-july))}
+
+/* header */
+.site-head{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px var(--gutter)}
+.wordmark{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 80;font-size:1.5rem;letter-spacing:-.02em;text-decoration:none;line-height:1}
+.nav{display:flex;gap:clamp(14px,2vw,26px);list-style:none;margin:0;padding:0;font-weight:550;font-size:1rem}
+.nav a{text-decoration:none}.nav a:hover{text-decoration:underline}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:100svh}
+.hero-copy{display:flex;flex-direction:column}
+.hero-copy>.hero-text{margin-top:auto!important;padding:0 var(--gutter) clamp(28px,5vh,56px)}
+.hero h1,.hero .wp-block-heading{font-size:clamp(3rem,1.2rem + 5.2vw,6rem);margin-bottom:.32em}
+.hero-lede{max-width:34ch;margin-bottom:28px;color:var(--ink-2)}
+.visit{display:flex;flex-wrap:wrap;gap:8px;max-width:30rem}
+.visit label{flex-basis:100%;font-weight:650;font-size:1rem}
+.visit select{flex:1 1 11rem;min-height:52px;padding:0 14px;background:transparent;border:2px solid var(--ink);border-radius:0;color:inherit;font:inherit}
+.hero-season{display:flex;flex-direction:column;background:var(--season);color:var(--season-on);padding:clamp(16px,2.4vw,32px);padding-bottom:0;transition:background-color .8s var(--ease),color .5s var(--ease)}
+.window{position:relative;flex:1 1 auto;min-height:44vh;overflow:hidden;background:var(--ink)}
+.window img{position:absolute;inset:0;opacity:0;transition:opacity .9s var(--ease)}
+.window img.on{opacity:1}
+.strip{margin-top:6px;display:grid;grid-template-columns:repeat(4,1fr);touch-action:pan-y;user-select:none}
+.strip button{appearance:none;background:none;border:0;border-top:4px solid transparent;margin-top:0;padding:14px 12px 20px 0;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.strip button strong{display:block;font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 86;font-size:clamp(1.25rem,.9rem + 1.1vw,1.875rem);letter-spacing:-.02em;line-height:1.1}
+.strip button .latin{display:block;font-size:.95rem;opacity:.86}
+.strip button[aria-selected=true]{border-top-color:currentColor}
+.strip button:not([aria-selected=true]):hover strong{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.15em}
+
+/* section rhythm */
+.sect{padding:clamp(64px,10vw,144px) var(--gutter) clamp(48px,7vw,96px)}
+.sect-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(16px,3vw,44px);margin-bottom:clamp(32px,5vw,64px);align-items:end}
+.sect-head h2{font-size:clamp(2.25rem,1.3rem + 3.4vw,4.5rem)}
+.sect-head p{max-width:52ch;color:var(--ink-2)}
+
+/* bloom chart */
+.chart{width:100%;border-collapse:collapse;table-layout:fixed;font-variant-numeric:tabular-nums}
+.chart th{font-weight:650;font-size:.95rem;text-align:center;padding:0 0 10px}
+.chart thead th:first-child,.chart tbody th{text-align:left;width:30%}
+.chart tbody th{padding:12px 16px 12px 0;border-top:2px solid var(--ink);font-weight:650;font-size:1.05rem;line-height:1.2}
+.chart tbody th .latin{display:block;font-size:.95rem;color:var(--ink-2)}
+.chart td{border-top:2px solid var(--ink);padding:0;position:relative;height:60px}
+.chart td .bar{position:absolute;inset:12px 0}
+
+/* gardens */
+.gardens{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(12px,1.6vw,24px)}
+.packet{display:flex;flex-direction:column;padding:clamp(14px,1.6vw,24px);text-decoration:none;transition:transform .5s var(--ease)}
+.packet:nth-child(1){grid-column:span 7}
+.packet:nth-child(2){grid-column:span 5;margin-top:clamp(0px,8vw,120px)}
+.packet:nth-child(3){grid-column:span 5;margin-bottom:clamp(0px,8vw,120px)}
+.packet:nth-child(4){grid-column:span 7}
+.packet-photo{position:relative;overflow:hidden;aspect-ratio:3/2;flex:1 1 auto}
+.packet-photo img{position:absolute;inset:0}
+.packet:nth-child(2) .packet-photo,.packet:nth-child(3) .packet-photo{aspect-ratio:4/5}
+.packet-photo img{transition:transform 1.2s var(--ease)}
+.packet:hover .packet-photo img{transform:scale(1.03)}
+.packet h3{font-size:clamp(1.75rem,1.2rem + 1.8vw,3rem);margin:18px 0 6px}
+.packet-meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 18px;align-items:baseline}
+.packet .latin{font-size:1.0625rem}
+
+/* process */
+.process{background:var(--april);color:var(--on-april)}
+.process .sect-head p{color:var(--ink)}
+.steps{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:clamp(16px,2.4vw,36px);align-items:start}
+.step:nth-child(2){margin-top:clamp(0px,6vw,88px)}
+.step:nth-child(3){margin-top:clamp(0px,12vw,176px)}
+.step h3{font-size:clamp(1.5rem,1.15rem + 1vw,2.125rem);margin:0 0 8px}
+.step .ph{aspect-ratio:3/2;overflow:hidden;margin:0 0 16px}
+.step:nth-child(3) .ph{aspect-ratio:4/5}
+
+/* journal */
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,36px)}
+.post{text-decoration:none;display:block}
+.post .ph{aspect-ratio:3/2;overflow:hidden;margin-bottom:14px}
+.post h3{font-size:clamp(1.375rem,1.1rem + .8vw,1.875rem);line-height:1.08;margin-bottom:6px}
+.post:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.12em}
+.post time{font-size:.95rem;color:var(--ink-2)}
+
+/* close + footer */
+.close{background:var(--january);color:var(--on-january);padding:clamp(72px,11vw,160px) var(--gutter)}
+.close h2{font-size:clamp(3rem,1.4rem + 6vw,7rem);max-width:12ch;margin-bottom:.35em;max-width:14ch}
+.close .btn{background:var(--stone);color:var(--ink)}
+.close .btn:hover{background:var(--october);color:var(--ink)}
+.foot{background:var(--ink);color:var(--stone);padding:clamp(36px,5vw,64px) var(--gutter);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;font-size:1rem}
+.foot .wordmark{display:block;margin-bottom:10px}
+.foot p{max-width:58ch}
+.foot .note{color:#C9CCC2}
+
+
+/* season classes */
+.season-april{--season:var(--april);--season-on:var(--on-april)}
+.season-july{--season:var(--july);--season-on:var(--on-july)}
+.season-october{--season:var(--october);--season-on:var(--on-october)}
+.season-january{--season:var(--january);--season-on:var(--on-january)}
+.hero-season,.packet,.bar,.garden-hero{background:var(--season);color:var(--season-on)}
+body.accent-april{--season:var(--april);--season-on:var(--on-april)}
+body.accent-july{--season:var(--july);--season-on:var(--on-july)}
+body.accent-october{--season:var(--october);--season-on:var(--on-october)}
+body.accent-january{--season:var(--january);--season-on:var(--on-january)}
+.chart td .bar{display:block}
+
+/* WordPress wiring */
+.wp-site-blocks{min-height:100svh;display:flex;flex-direction:column}
+.wp-site-blocks>main,.wp-site-blocks>.wp-block-group:not(.foot):not(.site-head){flex:1 0 auto}
+.screen-reader-text{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.wp-block-navigation.nav,.nav .wp-block-navigation__container{gap:clamp(14px,2vw,26px)}
+.wp-block-navigation a{text-decoration:none}
+.wp-block-navigation a:hover{text-decoration:underline}
+.wp-block-site-title{margin:0}
+.wp-block-site-title a{text-decoration:none}
+.gardens,.posts{list-style:none;margin:0;padding:0}
+.wp-block-post-template.gardens{display:grid;max-width:none}
+.wp-block-post-template.posts{display:grid;max-width:none}
+.packet{position:relative}
+.packet .wp-block-post-featured-image{margin:0;flex:1 1 auto;position:relative;overflow:hidden;aspect-ratio:3/2}
+.packet:nth-child(2) .wp-block-post-featured-image,.packet:nth-child(3) .wp-block-post-featured-image{aspect-ratio:4/5}
+.packet .wp-block-post-featured-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.packet:hover .wp-block-post-featured-image img{transform:scale(1.03)}
+.packet .wp-block-post-title{font-size:clamp(1.75rem,1.2rem + 1.8vw,3rem);margin:18px 0 6px}
+.packet .wp-block-post-title a{text-decoration:none}
+.packet .wp-block-post-title a::after{content:"";position:absolute;inset:0}
+.packet-meta p{margin:0}
+.packet-meta .garden-plant{font-family:var(--latin);font-style:italic;font-size:1.0625rem}
+.post .wp-block-post-featured-image{margin:0 0 14px;aspect-ratio:3/2;overflow:hidden}
+.post .wp-block-post-featured-image img{width:100%;height:100%;object-fit:cover}
+.post .wp-block-post-title{font-size:clamp(1.375rem,1.1rem + .8vw,1.875rem);line-height:1.08;margin:0 0 6px}
+.post .wp-block-post-title a{text-decoration:none}
+.post .wp-block-post-title a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.12em}
+.post .wp-block-post-date{font-size:.95rem;color:var(--ink-2)}
+.wp-block-button__link,.wp-element-button{border-radius:0;background:var(--ink);color:var(--stone);font-weight:650;min-height:52px;display:inline-flex;align-items:center;padding:0 24px;text-decoration:none}
+.close .wp-block-button__link{background:var(--stone);color:var(--ink)}
+.close .wp-block-button__link:hover{background:var(--october);color:var(--ink)}
+.close h2,.close .wp-block-heading{font-size:clamp(3rem,1.4rem + 6vw,7rem);max-width:14ch;margin-bottom:.35em}
+.foot p{margin:0}.foot a{color:inherit}.foot .wp-block-site-title{margin-bottom:10px}
+.foot .wp-block-site-title a{font-family:var(--display);font-weight:800;font-size:1.5rem}
+
+/* reading pages */
+.page-head{padding:clamp(40px,7vw,96px) var(--gutter) clamp(28px,4vw,56px)}
+.page-head h1{font-size:clamp(3rem,1.2rem + 5.2vw,6rem);max-width:14ch}
+.page-head .lede{max-width:44ch;margin-top:20px;font-size:clamp(1.125rem,1rem + .4vw,1.375rem)}
+.prose{padding:0 var(--gutter) clamp(56px,8vw,112px)}
+.prose>*{max-width:68ch;margin-left:0;margin-right:0}
+.prose p,.prose ul{margin:0 0 1.1em}
+.prose h2{font-size:clamp(1.75rem,1.3rem + 1.4vw,2.75rem);margin:1.6em 0 .5em}
+.prose figure{max-width:none;margin:1.6em 0}
+.prose figure img{height:auto}
+.garden-hero{padding:clamp(16px,2.4vw,32px)}
+.garden-hero .wp-block-post-featured-image{margin:0;aspect-ratio:3/2;max-height:78vh;overflow:hidden;width:100%}
+.garden-hero .wp-block-post-featured-image img{width:100%;height:100%;object-fit:cover}
+.garden-hero h1{font-size:clamp(3rem,1.2rem + 5.2vw,6rem);margin:20px 0 10px}
+.garden-facts{display:flex;flex-wrap:wrap;gap:6px 28px}
+.garden-facts p{margin:0}
+.garden-facts .garden-plant{font-family:var(--latin);font-style:italic}
+
+/* full request form */
+.visit-form{display:grid;gap:18px;max-width:34rem}
+.visit-form p{margin:0}
+.visit-form label{display:block;font-weight:650;margin-bottom:6px}
+.visit-form input,.visit-form select,.visit-form textarea{width:100%;min-height:52px;padding:12px 14px;background:transparent;border:2px solid var(--ink);border-radius:0;color:inherit;font:inherit}
+.visit-form .hp{position:absolute;left:-9999px}
+.form-note{max-width:34rem;padding:16px 18px;background:var(--april);color:var(--on-april);margin:0 0 20px}
+.form-note.is-error{background:var(--january);color:var(--on-january)}
+.concept-note{max-width:34rem;margin:0 0 24px;color:var(--ink-2);font-size:1rem}
+
+
+/* home: the header sits over the left column on wide screens */
+@media (min-width:901px){
+  .home .site-head{position:absolute;top:0;left:0;width:41.666%;z-index:2}
+}
+.home .wp-site-blocks{display:block}
+.prose>.chart,.prose>.wp-block-quillmoor-bloom-chart{max-width:none}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-text{padding-top:clamp(28px,8vw,56px)}
+  .hero-season{padding:16px 16px 0}
+  .window{min-height:0;aspect-ratio:4/3;flex:none}
+  .sect-head{grid-template-columns:1fr;align-items:start}
+  .gardens{grid-template-columns:1fr}
+  .packet:nth-child(n){grid-column:auto;margin:0}
+  .packet:nth-child(2) .wp-block-post-featured-image,.packet:nth-child(3) .wp-block-post-featured-image{aspect-ratio:3/2}
+  .steps,.posts,.foot{grid-template-columns:1fr}
+  .step:nth-child(n){margin-top:0}
+  .step:nth-child(3) .ph{aspect-ratio:3/2}
+  .strip button{padding:12px 6px 16px 0}
+  .strip button .latin{display:none}
+  .chart thead th:first-child{width:0;padding:0}
+  .chart,.chart tbody,.chart tr{display:block}
+  .chart thead{display:block}.chart thead tr{display:grid;grid-template-columns:repeat(12,1fr)}
+  .chart thead th:first-child{display:none}
+  .chart tbody tr{display:grid;grid-template-columns:repeat(12,1fr);border-top:2px solid var(--ink);padding-top:10px;margin-bottom:6px}
+  .chart tbody th{grid-column:1/-1;width:auto;border:0;padding:0 0 8px}
+  .chart td{border:0;height:22px}.chart td .bar{inset:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+.prose-wide{padding:0 var(--gutter) clamp(56px,8vw,112px)}
+.sect-top{padding-top:clamp(40px,6vw,80px)}
+.no-top{padding-top:0}
+.alignfull{max-width:none;width:100%}
+.editor-styles-wrapper .hero{min-height:760px}
+/* In the editor, the home page runs full width like the site does */
+.editor-styles-wrapper .is-root-container:has(>.hero){max-width:none!important;padding:0!important}
+.editor-styles-wrapper .is-root-container:has(>.hero)>*{max-width:none!important;margin-inline:0!important}
+
+/* review fixes */
+html{scrollbar-color:var(--ink) var(--stone);caret-color:var(--ink)}
+.season-july :focus-visible,.season-january :focus-visible,.close :focus-visible,.foot :focus-visible,.page-head :focus-visible{outline-color:var(--stone)}
+.strip button{display:flex;flex-direction:column;justify-content:flex-start}
+.foot .wp-block-site-title a{font-variation-settings:"wdth" 80;letter-spacing:-.02em}
+.chart abbr{text-decoration:none}
+.chart td .bar{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.visit select,.visit-form select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%23191D18' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px}
+.wp-block-site-title a{font-family:var(--display);font-weight:800;font-variation-settings:"wdth" 80;font-size:1.5rem;letter-spacing:-.02em}
+.prose em{font-family:var(--latin);font-style:italic}
+.prose>*{max-width:52ch}
+.prose>.wp-block-quillmoor-bloom-chart,.prose>.garden-split,.prose>.service-row,.prose>figure{max-width:none}
+.prose>.wp-block-quillmoor-bloom-chart{margin:32px 0 24px}
+
+/* color heads on reading pages */
+.page-head{background:var(--july);color:var(--on-july);margin-bottom:clamp(32px,5vw,64px)}
+.page-head .wp-block-post-date{margin-top:14px}
+body.page-slug-process .page-head{background:var(--april);color:var(--on-april)}
+body.blog .page-head,body.single-post .page-head{background:var(--october);color:var(--on-october)}
+body.post-type-archive-quill_garden .page-head{background:none;color:var(--ink);margin-bottom:0}
+body.error404 .page-head{background:var(--january);color:var(--on-january);margin-bottom:0}
+.page-head a{color:inherit}
+
+/* services */
+.service-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px clamp(16px,3vw,44px);border-top:2px solid var(--ink);padding:24px 0 clamp(28px,4vw,56px)}
+.service-row h2{margin:0;font-size:clamp(1.75rem,1.3rem + 1.4vw,2.75rem)}
+.service-row p{margin:0;max-width:52ch}
+
+/* garden pages */
+.garden-hero{padding-inline:var(--gutter)}
+.garden-split{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(20px,3vw,44px);align-items:start;margin-bottom:clamp(32px,5vw,64px)}
+.garden-split p{max-width:52ch}
+.garden-split figure{margin:0;max-width:560px}
+.garden-next{padding:0 var(--gutter) clamp(40px,6vw,72px);font-weight:650}
+.garden-next a{font-family:var(--display);font-variation-settings:"wdth" 86;font-size:clamp(1.5rem,1.15rem + 1vw,2.125rem);letter-spacing:-.012em}
+
+/* site visit page */
+.visit-split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
+.visit-copy{padding:clamp(28px,4vw,56px) var(--gutter) clamp(40px,6vw,72px)}
+.visit-copy h1{font-size:clamp(2.75rem,1.2rem + 4vw,5rem);margin-bottom:.4em}
+.visit-copy p{margin:0 0 1em}
+.visit-photo{background:var(--season);padding:clamp(16px,2.4vw,32px)}
+.visit-photo .wp-block-post-featured-image{margin:0;height:100%}
+.visit-photo img{width:100%;height:100%;object-fit:cover;min-height:360px}
+.field-error{display:block;margin-top:6px;font-weight:650;font-size:1rem;color:var(--january)}
+.visit-form [aria-invalid=true]{border-color:var(--january);border-width:3px}
+
+/* nav */
+.nav-cta a{font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.2em}
+.home .nav-cta{display:none}
+.current-menu-item>a{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.3em}
+@media (max-width:900px){
+  .wp-block-navigation__responsive-container-open:not(.always-shown){display:flex!important}
+  .wp-block-navigation__responsive-container:not(.is-menu-open){display:none!important}
+  .service-row,.garden-split,.visit-split{grid-template-columns:1fr}
+  .visit-photo{order:-1}
+  .visit-photo img{min-height:0;aspect-ratio:3/2}
+}
+@media (min-width:901px) and (max-width:1240px){
+  .home .wp-block-navigation__responsive-container-open:not(.always-shown){display:flex!important}
+  .home .wp-block-navigation__responsive-container:not(.is-menu-open){display:none!important}
+}
+.wp-block-navigation__responsive-container.is-menu-open{background:var(--january)!important;color:var(--on-january)!important;padding:var(--gutter)!important}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{align-items:flex-start;padding-top:64px}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container{align-items:flex-start;gap:14px}
+.wp-block-navigation__responsive-container.is-menu-open a{font-family:var(--display);font-weight:700;font-variation-settings:"wdth" 86;font-size:2.5rem;line-height:1.1;color:inherit}
+@media (min-width:901px){.hero-copy>.hero-text{padding-top:96px}}
+@media (max-width:480px){.visit .btn{width:100%}}
+
+/* editor */
+.editor-styles-wrapper .hero .hero-season{height:100%}
+.editor-styles-wrapper:has(.hero) .editor-post-title{display:none}
+.chart td .bar{box-shadow:inset 0 1.5px 0 var(--ink),inset 0 -1.5px 0 var(--ink)}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item{align-items:flex-start!important;justify-content:flex-start!important;text-align:left}

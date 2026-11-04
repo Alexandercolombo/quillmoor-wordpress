@@ -1,0 +1,179 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "720px",
+      "wideSize": "1440px"
+    },
+    "spacing": {
+      "blockGap": true,
+      "units": [
+        "px",
+        "rem",
+        "%",
+        "vw"
+      ]
+    },
+    "color": {
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "defaultDuotone": false,
+      "palette": [
+        {
+          "slug": "stone",
+          "name": "Fieldstone",
+          "color": "#E8E9E3"
+        },
+        {
+          "slug": "ink",
+          "name": "Ink",
+          "color": "#191D18"
+        },
+        {
+          "slug": "april",
+          "name": "April green",
+          "color": "#8FA33A"
+        },
+        {
+          "slug": "july",
+          "name": "July boxwood",
+          "color": "#1E4A33"
+        },
+        {
+          "slug": "october",
+          "name": "October gold",
+          "color": "#D8922A"
+        },
+        {
+          "slug": "january",
+          "name": "January plum",
+          "color": "#4A2A40"
+        }
+      ]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "fluid": true,
+      "fontSizes": [
+        {
+          "slug": "small",
+          "name": "Small",
+          "size": "1rem",
+          "fluid": false
+        },
+        {
+          "slug": "medium",
+          "name": "Body",
+          "size": "1.125rem",
+          "fluid": false
+        },
+        {
+          "slug": "large",
+          "name": "Large",
+          "size": "1.75rem",
+          "fluid": {
+            "min": "1.5rem",
+            "max": "2.125rem"
+          }
+        },
+        {
+          "slug": "x-large",
+          "name": "Section heading",
+          "size": "3.5rem",
+          "fluid": {
+            "min": "2.25rem",
+            "max": "4.5rem"
+          }
+        },
+        {
+          "slug": "xx-large",
+          "name": "Page heading",
+          "size": "5rem",
+          "fluid": {
+            "min": "3rem",
+            "max": "6rem"
+          }
+        }
+      ],
+      "fontFamilies": [
+        {
+          "slug": "bricolage",
+          "name": "Bricolage Grotesque",
+          "fontFamily": "\"Bricolage Grotesque\", sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Bricolage Grotesque",
+              "fontWeight": "200 800",
+              "fontStretch": "75% 100%",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/bricolage-grotesque.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "gelasio",
+          "name": "Gelasio Italic",
+          "fontFamily": "\"Gelasio\", serif",
+          "fontFace": [
+            {
+              "fontFamily": "Gelasio",
+              "fontWeight": "400",
+              "fontStyle": "italic",
+              "fontDisplay": "swap",
+              "src": [
+                "file:./assets/fonts/gelasio-italic.woff2"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--stone)",
+      "text": "var(--wp--preset--color--ink)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--bricolage)",
+      "fontSize": "var(--wp--preset--font-size--medium)",
+      "lineHeight": "1.5"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--bricolage)",
+          "fontWeight": "700",
+          "lineHeight": "1",
+          "letterSpacing": "-0.012em"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "inherit"
+        }
+      }
+    },
+    "spacing": {
+      "blockGap": "0px"
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ],
+  "customTemplates": []
+}

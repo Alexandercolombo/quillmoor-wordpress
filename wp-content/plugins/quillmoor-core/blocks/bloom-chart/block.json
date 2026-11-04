@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "quillmoor/bloom-chart",
+  "title": "Twelve-month chart",
+  "category": "quillmoor",
+  "icon": "chart-bar",
+  "description": "Shows which plants are in flower, fruit or color each month.",
+  "supports": { "html": false },
+  "attributes": {
+    "rows": {
+      "type": "array",
+      "default": [
+        { "name": "Vernal witch hazel", "latin": "Hamamelis vernalis", "months": "2,3", "season": "january" },
+        { "name": "Lenten rose", "latin": "Helleborus × hybridus", "months": "3,4", "season": "january" },
+        { "name": "Daffodil", "latin": "Narcissus", "months": "4", "season": "april" },
+        { "name": "Blue false indigo", "latin": "Baptisia australis", "months": "5,6", "season": "april" },
+        { "name": "Purple coneflower", "latin": "Echinacea purpurea", "months": "7,8,9", "season": "july" },
+        { "name": "Little bluestem", "latin": "Schizachyrium scoparium", "months": "8,9,10,11,12,1,2", "season": "october" },
+        { "name": "New England aster", "latin": "Symphyotrichum novae-angliae", "months": "9,10", "season": "october" },
+        { "name": "Winterberry", "latin": "Ilex verticillata", "months": "10,11,12,1,2", "season": "january" }
+      ]
+    }
+  },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php"
+}

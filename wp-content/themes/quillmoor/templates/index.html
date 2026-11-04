@@ -1,0 +1,22 @@
+<!-- wp:template-part {"slug":"header","area":"header"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
+<main class="wp-block-group"><!-- wp:group {"className":"page-head","layout":{"type":"default"}} -->
+<div class="wp-block-group page-head"><!-- wp:heading {"level":1} -->
+<h1 class="wp-block-heading">From the journal.</h1>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"className":"lede"} -->
+<p class="lede">Notes on what to do, and what to leave alone.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"prose-wide","layout":{"type":"default"}} -->
+<div class="wp-block-group prose-wide"><!-- wp:query {"query":{"perPage":12,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
+<div class="wp-block-query"><!-- wp:post-template {"className":"posts"} -->
+<!-- wp:post-featured-image {"isLink":true} /-->
+<!-- wp:post-title {"level":3,"isLink":true} /-->
+<!-- wp:post-date {"format":"F Y"} /-->
+<!-- /wp:post-template --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+<!-- wp:pattern {"slug":"quillmoor/close"} /-->
+<!-- wp:template-part {"slug":"footer","area":"footer"} /-->

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "quillmoor/season-strip",
+  "title": "Season strip",
+  "category": "quillmoor",
+  "icon": "calendar-alt",
+  "description": "One garden shown in four seasons. Visitors tap or drag across the seasons and the photo and color change with them.",
+  "supports": { "html": false, "align": false },
+  "attributes": {
+    "seasons": {
+      "type": "array",
+      "default": [
+        { "id": "april", "label": "April", "plant": "Narcissus", "imageId": 0, "alt": "" },
+        { "id": "july", "label": "July", "plant": "Echinacea purpurea", "imageId": 0, "alt": "" },
+        { "id": "october", "label": "October", "plant": "Schizachyrium scoparium", "imageId": 0, "alt": "" },
+        { "id": "january", "label": "January", "plant": "Ilex verticillata", "imageId": 0, "alt": "" }
+      ]
+    }
+  },
+  "editorScript": "file:./editor.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "quillmoor/visit-start",
+  "title": "Site visit: start",
+  "category": "quillmoor",
+  "icon": "location",
+  "description": "A town picker that sends visitors to the full request form with their town filled in.",
+  "supports": { "html": false },
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php"
+}
