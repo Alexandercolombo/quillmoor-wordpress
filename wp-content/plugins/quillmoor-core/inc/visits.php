@@ -72,7 +72,34 @@ function quillmoor_handle_visit() {
 	exit;
 }
 
-/** Towns offered in both forms. */
+/** Towns offered in both forms, one per line, editable under Settings > General. */
 function quillmoor_visit_towns() {
-	return array( 'Bedford', 'Katonah', 'Pound Ridge', 'North Salem', 'South Salem', 'Somers', 'Armonk', 'Somewhere else' );
+	$towns = get_option( 'quillmoor_towns', "Bedford\nKatonah\nPound Ridge\nNorth Salem\nSouth Salem\nSomers\nArmonk\nSomewhere else" );
+	return array_values( array_filter( array_map( 'trim', explode( "\n", $towns ) ) ) );
 }
+
+add_action(
+	'admin_init',
+	static function () {
+		register_setting(
+			'general',
+			'quillmoor_towns',
+			array(
+				'type'              => 'string',
+				'sanitize_callback' => 'sanitize_textarea_field',
+			)
+		);
+		add_settings_field(
+			'quillmoor_towns',
+			__( 'Towns you serve', 'quillmoor-core' ),
+			static function () {
+				printf(
+					'<textarea id="quillmoor_towns" name="quillmoor_towns" rows="8" class="regular-text">%s</textarea><p class="description">%s</p>',
+					esc_textarea( implode( "\n", quillmoor_visit_towns() ) ),
+					esc_html__( 'One per line. These appear in the site-visit forms.', 'quillmoor-core' )
+				);
+			},
+			'general'
+		);
+	}
+);

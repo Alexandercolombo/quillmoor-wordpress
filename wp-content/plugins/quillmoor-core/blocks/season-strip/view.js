@@ -25,12 +25,13 @@
 		set( today );
 
 		// One slow pass through the year on load, so visitors see the strip is alive. Any touch stops it.
-		var timer, order = tabs.map( function ( t ) { return t.dataset.season; } );
+		var timer, stopped = false, order = tabs.map( function ( t ) { return t.dataset.season; } );
 		var start = order.indexOf( today ), step = 0;
-		function stop() { clearInterval( timer ); }
+		function stop() { stopped = true; clearInterval( timer ); }
 		if ( ! window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches ) {
 			imgs.forEach( function ( i ) { i.loading = 'eager'; } );
 			window.setTimeout( function () {
+				if ( stopped ) { return; }
 				timer = window.setInterval( function () {
 					step++;
 					set( order[ ( start + step ) % order.length ] );
